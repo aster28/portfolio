@@ -1,18 +1,6 @@
 <html>
   <head>
-    <script>
-     var app = angular.module('plunker',[]);
-app.controller('MainCtrl', function($scope) {
-$scope.todos = []
-$scope.todoList = "";
-$scope.addTodo = function(){
-  $scope.todos.push($scope.todoList)
-}
-$scope.clearAll = function(){
-  $scope.todos = []
- }
-});
-    </script>
+   
     
   </head>
 <body>
@@ -28,5 +16,18 @@ $scope.clearAll = function(){
     </ul>
   </div>
 </div>
+ <script>
+     var app = angular.module('plunker',[]);
+app.controller('MainCtrl', function($scope) {
+$scope.todos = []
+$scope.todoList = "";
+$scope.addTodo = function(){
+  $scope.todos.push($scope.todoList)
+}
+$scope.clearAll = function(){
+  $scope.todos = []
+ }
+});
+    </script>
   </body>
   </html>
