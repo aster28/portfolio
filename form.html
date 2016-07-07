@@ -1,38 +1,32 @@
 <html>
   <head>
     <script>
-      
-      var app = angular.module('plunker', []);
-
+     var app = angular.module('plunker',[]);
 app.controller('MainCtrl', function($scope) {
+$scope.todos = []
+$scope.todoList = "";
+$scope.addTodo = function(){
+  $scope.todos.push($scope.todoList)
+}
+$scope.clearAll = function(){
   $scope.todos = []
-  $scope.todoList = "";
-
-  $scope.addTodo = function(){
-    $scope.todos.push($scope.todoList)
-  }
-
-  $scope.clearAll = function(){
-    $scope.todos = []
-  }
-
-
+ }
 });
     </script>
     
   </head>
-<body ng-controller="MainCtrl">
-    <div class="container">
-      <div class="main">
-        <p>Todo App</p>
-        <input ng-model="todoList" type="text" name="input" placeholder="Enter tasks here">
-        <button ng-click="addTodo()">Add</button>
-        <ul>
-          <li ng-repeat="todo in todos">
-            {{todo}}
-          </li>
-        </ul>
-      </div>
-    </div>
+<body>
+  <div class="container" data-ng-app="plunker" >
+  <div class="main" data-ng-controller="MainCtrl">
+    <p>Todo App</p>
+    <input ng-model="todoList" type="text" name="input" placeholder="Enter tasks here">{{todoList}}
+    <button ng-click="addTodo()">Add</button>
+    <ul>
+      <li ng-repeat="todo in todos">
+        {{todo}}
+      </li>
+    </ul>
+  </div>
+</div>
   </body>
   </html>
