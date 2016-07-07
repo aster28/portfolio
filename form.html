@@ -1,27 +1,38 @@
-<html> 
-<head> 
-<title>Process the HTML form data with the POST method</title> 
-</head> 
-<body> 
-<form method="POST" action="process.asp" name="form1"> 
-<table width="70%" border="0" cellspacing="0" cellpadding="0"> 
-<tr> 
-  <td>name:</td> 
-  <td colspan="2"><input type="text" name="name"></td> 
-</tr> 
-<tr> 
-  <td>email:</td> 
-  <td colspan="2"><input type="text" name="email"></td> 
-</tr> 
-<tr> 
-  <td>comments:</td> 
-  <td colspan="2"><textarea name="comment" cols="40" rows="5"></textarea></td> 
-</tr> 
-<tr> 
-  <td>&nbsp;</td> 
-  <td colspan="2"><input type="submit" name="Submit" value="Submit"></td> 
-</tr> 
-</table> 
-</form> 
-</body> 
-</html>
+<html>
+  <head>
+    <script>
+      
+      var app = angular.module('plunker', []);
+
+app.controller('MainCtrl', function($scope) {
+  $scope.todos = []
+  $scope.todoList = "";
+
+  $scope.addTodo = function(){
+    $scope.todos.push($scope.todoList)
+  }
+
+  $scope.clearAll = function(){
+    $scope.todos = []
+  }
+
+
+});
+    </script>
+    
+  </head>
+<body ng-controller="MainCtrl">
+    <div class="container">
+      <div class="main">
+        <p>Todo App</p>
+        <input ng-model="todoList" type="text" name="input" placeholder="Enter tasks here">
+        <button ng-click="addTodo()">Add</button>
+        <ul>
+          <li ng-repeat="todo in todos">
+            {{todo}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  </html>
