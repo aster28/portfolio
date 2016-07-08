@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <head>
+    <script>
+      function no(){
+           var s1 = document.myform.name.value;
+           document.getElementById('demo').value = s1;
+        
+      }
+    </script>
+  </head>
 <body>
 
-<div data-ng-app="" data-ng-init="firstName='John'">
-
-<p>The name is <span data-ng-bind="firstName"></span></p>
-
+<div>
+<form name="myform">
+The name is <input type="text" id="name"/>
+<input type="button" name="button" onClick="no()">
+</form>
 </div>
-
+<div>
+  <p id ="demo"></p>
+</div>
 </body>
 </html>
 
